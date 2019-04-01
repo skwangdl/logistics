@@ -1,0 +1,261 @@
+.text-overflow {
+	width: 100px; overflow: hidden; white-space: nowrap; -ms-text-overflow: ellipsis; -o-text-overflow: ellipsis;
+}
+img.avatar {
+	width: 100px; height: 100px;
+}
+.highlight {
+	color: rgb(243, 156, 18);
+}
+.field-title {
+	background: rgb(245, 245, 245) !important; vertical-align: middle !important;
+}
+.field-value {
+	vertical-align: middle !important;
+}
+.input-inline {
+	display: inline-block;
+}
+#bdmap {
+	margin: 0px; overflow: hidden;
+}
+ul.typeahead li a strong {
+	color: rgb(204, 0, 0);
+}
+#col-filter-ul {
+	list-style: none; padding-left: 0px;
+}
+#col-filter-ul li {
+	font-size: 12px; font-weight: normal; margin-left: 30px; float: left;
+}
+#col-filter-ul li > a > label {
+	font-weight: normal; cursor: pointer;
+}
+#col-filter-ul li > a > label > input[type='checkbox'] {
+	margin-top: 2px;
+}
+#col-filter-ul li.multiselect-group {
+	width: 100%; margin-left: 20px; float: left;
+}
+#col-filter-ul li.multiselect-group > label {
+	cursor: pointer;
+}
+td > a {
+	
+}
+a.quick-filter {
+	padding: 5px; border-radius: 0px; color: rgb(255, 255, 255) !important; margin-left: 5px; background-color: rgb(91, 192, 222);
+}
+a.ticket-export {
+	padding: 5px; border-radius: 0px; color: rgb(255, 255, 255) !important; margin-left: 5px; background-color: rgb(91, 192, 222);
+}
+.data-error {
+	color: rgb(255, 0, 0); font-size: 12px; margin-top: 5px; display: block;
+}
+td.required::after {
+	color: rgb(255, 0, 0); font-weight: bold; content: "*";
+}
+.multiselect-container {
+	-ms-overflow-y: auto; max-height: 230px;
+}
+.pagination-area {
+	margin-top: 10px;
+}
+#manual-input-box input.date-time {
+	width: 200px;
+}
+.jstree-default .jstree-disabled > .jstree-icon {
+	filter: none !important; opacity: 1 !important; -webkit-filter: none;
+}
+.loading-mask {
+	left: 0px; top: 0px; width: 100%; height: 100%; position: fixed; z-index: 10000; opacity: 0.5; background-color: rgb(0, 0, 0);
+}
+.img-container {
+	margin: 5px; display: inline-block;
+}
+.thumbnail img {
+	max-height: 150px; max-width: 150px;
+}
+.thumbnail {
+	margin-bottom: 0px !important;
+}
+.tooltip-inner {
+	text-align: left !important; padding-top: 10px !important; max-width: 400px !important;
+}
+.tooltip-inner p {
+	-ms-word-break: break-all;
+}
+.note_indicator:hover {
+	cursor: pointer;
+}
+#facilityList td {
+	vertical-align: middle;
+}
+th {
+	background-color: rgb(238, 238, 238);
+}
+.table-bordered > thead > tr > td {
+	border-bottom-width: 1px !important; background-color: rgb(216, 234, 245);
+}
+.table-bordered > thead > tr > th {
+	border-bottom-width: 1px !important; background-color: rgb(216, 234, 245);
+}
+a.btn-delete {
+	color: rgb(209, 91, 71);
+}
+tr.level-warning {
+	background: rgb(254, 245, 175);
+}
+tr.level-error {
+	background: rgb(254, 195, 214);
+}
+tr.level-low {
+	background: rgb(149, 133, 191);
+}
+.badge-important.badge {
+	background-color: rgb(209, 91, 71);
+}
+.badge-important {
+	background-color: rgb(209, 91, 71);
+}
+.badge-warning.badge {
+	background-color: rgb(248, 148, 6);
+}
+.badge-warning {
+	background-color: rgb(248, 148, 6);
+}
+.tt-menu {
+	text-align: left;
+}
+.typeahead {
+	background-color: rgb(255, 255, 255);
+}
+.typeahead:focus {
+	border: 2px solid rgb(0, 151, 207); border-image: none;
+}
+.tt-query {
+	box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075); -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.tt-hint {
+	color: rgb(153, 153, 153);
+}
+.tt-menu {
+	margin: 12px 0px; padding: 8px 0px; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.2); border-image: none; width: 200px; box-shadow: 0px 5px 10px rgba(0,0,0,0.2); background-color: rgb(255, 255, 255); -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2); -webkit-border-radius: 8px; -moz-border-radius: 8px; -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+.tt-suggestion {
+	padding: 3px 10px; line-height: 24px; font-size: 18px;
+}
+.tt-suggestion:hover {
+	color: rgb(255, 255, 255); cursor: pointer; background-color: rgb(0, 151, 207);
+}
+.tt-cursor.tt-suggestion {
+	color: rgb(255, 255, 255); background-color: rgb(0, 151, 207);
+}
+.tt-suggestion p {
+	margin: 0px;
+}
+.twitter-typeahead {
+	width: 200px;
+}
+.tt-highlight {
+	color: rgb(245, 105, 84);
+}
+.btn-primary.btn {
+	border-color: rgb(43, 87, 126); background-color: rgb(43, 87, 126);
+}
+.room-picture > img {
+	width: auto; display: block; max-height: 150px;
+}
+a.room-picture {
+	margin-top: 10px; margin-right: 10px; display: inline-block;
+}
+button:focus {
+	outline: 0px;
+}
+td.p-icon > img {
+	width: 16px; height: 16px; margin-right: 4px; margin-left: 4px;
+}
+td.p-icon {
+	vertical-align: middle;
+}
+.mask-container {
+	top: 48%; width: 60px; height: 60px; position: relative;
+}
+.mask-container .mask-circle {
+	left: 0px; top: 0px; width: 100%; height: 100%; position: absolute;
+}
+.mask-container .mask-circle::before {
+	margin: 0px auto; border-radius: 100%; animation:mask-circle-FadeDelay 1.2s ease-in-out infinite both; width: 15%; height: 15%; display: block; content: ""; background-color: white;
+}
+.mask-container .mask-circle-2 {
+	transform: rotate(30deg);
+}
+.mask-container .mask-circle-3 {
+	transform: rotate(60deg);
+}
+.mask-container .mask-circle-4 {
+	transform: rotate(90deg);
+}
+.mask-container .mask-circle-5 {
+	transform: rotate(120deg);
+}
+.mask-container .mask-circle-6 {
+	transform: rotate(150deg);
+}
+.mask-container .mask-circle-7 {
+	transform: rotate(180deg);
+}
+.mask-container .mask-circle-8 {
+	transform: rotate(210deg);
+}
+.mask-container .mask-circle-9 {
+	transform: rotate(240deg);
+}
+.mask-container .mask-circle-10 {
+	transform: rotate(270deg);
+}
+.mask-container .mask-circle-11 {
+	transform: rotate(300deg);
+}
+.mask-container .mask-circle-12 {
+	transform: rotate(330deg);
+}
+.mask-container .mask-circle-2::before {
+	animation-delay: -1.1s;
+}
+.mask-container .mask-circle-3::before {
+	animation-delay: -1s;
+}
+.mask-container .mask-circle-4::before {
+	animation-delay: -0.9s;
+}
+.mask-container .mask-circle-5::before {
+	animation-delay: -0.8s;
+}
+.mask-container .mask-circle-6::before {
+	animation-delay: -0.7s;
+}
+.mask-container .mask-circle-7::before {
+	animation-delay: -0.6s;
+}
+.mask-container .mask-circle-8::before {
+	animation-delay: -0.5s;
+}
+.mask-container .mask-circle-9::before {
+	animation-delay: -0.4s;
+}
+.mask-container .mask-circle-10::before {
+	animation-delay: -0.3s;
+}
+.mask-container .mask-circle-11::before {
+	animation-delay: -0.2s;
+}
+.mask-container .mask-circle-12::before {
+	animation-delay: -0.1s;
+}
+.condition-bar {
+	border-radius: 15px; height: 40px; color: white; line-height: 40px; position: absolute; background-color: rgb(0, 132, 137);
+}
+.condition-bar:hover {
+	cursor: pointer;
+}

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ccmSelectMst">
+
+	<cache/>
+	<select id="getPm01List" resultType="ccmPm01MstModel">
+		SELECT DEPO_CD,
+			DEPO_SOSHIKI_KB,
+			DEPO_NM,
+			DEPO_KANRISHA_NM,
+			EIGYOUSHO_CD,
+			SYOZOKUCHIIKI_KB AS areaKbn,
+			CASE WHEN DEPO_CD = EIGYOUSHO_CD THEN '1' ELSE '0' END AS eigyoushoKb,
+			KANRIMOTO_KAISYA_KB
+		FROM PM01
+		WHERE SAKUJO_KB = '0'
+		ORDER BY EIGYOUSHO_CD ASC, eigyoushoKb DESC, DEPO_CD ASC
+	</select>
+	
+	<select id="getPm28List" resultType="ccmPm28MstModel">
+		SELECT NAIBU_CD AS CODE_ID ,
+			GAIBU_CD AS FULL_NAME,
+			GAIBU_RYAKUSYOU_CD AS SHORT_NAME ,
+			SABU_1_CD as subCd1,
+			SABU_2_CD as subCd2
+		FROM PM28
+		WHERE KYOUTUU_CD = #{PARAM_KYOUTUU_CD}
+		AND SAKUJO_KB = '0'
+		ORDER BY HYOUJI_SQ ASC
+	</select>
+	
+	<select id="getPm43List" resultType="ccmPm43MstModel">
+		SELECT BUMON_CD,
+			CUST_CENTER_NM,
+			CUST_CENTER_RM,
+			KANRIMOTO_KAISYA_KB,
+			BUMON_KB
+		FROM PM43
+		WHERE SAKUJO_KB = '0'
+		ORDER BY BUMON_CD ASC
+	</select>
+	
+	<select id="getPm32List" resultType="ccmPm32MstModel">
+		SELECT BUMON_CD,
+			BUMON_NM,
+			KAIKEI_BUMON_CD,
+			KAIKEI_BUMON_NM
+		FROM PM32
+		WHERE SAKUJO_KB = '0'
+		ORDER BY BUMON_CD ASC
+	</select>
+	
+</mapper>

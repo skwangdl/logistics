@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+	http://www.springframework.org/schema/mvc
+	http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+
+	<context:component-scan base-package="jp.co.fourseeds, com.ntscn.frame, jp.co.plc.pl1, jp.co.common.mst,jp.co.plc.pl1.menu" />
+
+	<mvc:annotation-driven />
+	<context:annotation-config />
+	<mvc:default-servlet-handler/>
+
+	<!-- ======================================== ViewResolver config ============================================== -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		p:viewClass="org.springframework.web.servlet.view.JstlView" 
+		p:prefix="/jsp/" p:suffix=".jsp" />
+
+	<!--拦截器 -->
+	<mvc:interceptors>
+		<!-- 多个拦截器,顺序执行 -->
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<bean class="com.ntscn.frame.interceptor.TokenInteractor" />
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<!-- 拦截所有的请求，这个必须写在前面，也就是写在【不拦截】的上面 -->
+			<mvc:mapping path="/**" />
+			<!-- 但是排除下面这些，也就是不拦截请求 -->
+			<mvc:exclude-mapping path="/" />
+			<mvc:exclude-mapping path="/login/*" />
+			<bean class="com.ntscn.frame.interceptor.SessionInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+	<!-- 自定义的全局异常处理器 只要实现HandlerExceptionResolver接口就是全局异常处理器 -->
+	<bean class="com.ntscn.frame.interceptor.BusinessServiceExceptionInterceptor" />
+
+	<!-- 配置 MultipartResolver -->
+	<!-- TODO -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="UTF-8" />
+		<property name="maxUploadSize" value="204857600" />
+		<property name="maxInMemorySize" value="40960" />
+	</bean>
+	
+	<!-- <mvc:view-controller path="/" view-name="redirect:/login"/> -->
+	
+	<aop:aspectj-autoproxy proxy-target-class="true" />
+	
+	<!-- -->  
+    <mvc:annotation-driven>  
+        <mvc:message-converters>  
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+            <!-- HttpMessageConverter<T> -->
+                <property name="supportedMediaTypes">  
+                    <list>
+                        <!--  -->
+                        <value>text/plain;charset=UTF-8</value>  
+                        <value>text/html;charset=UTF-8</value>  
+                    </list>  
+                </property>  
+            </bean>
+            <!--  -->  
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">  
+                <property name="supportedMediaTypes">  
+                    <list>  
+                        <value>application/json; charset=UTF-8</value>  
+                        <value>application/x-www-form-urlencoded; charset=UTF-8</value>  
+                    </list>  
+                </property>  
+            </bean>  
+        </mvc:message-converters>  
+    </mvc:annotation-driven>
+	
+</beans>

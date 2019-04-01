@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="test">
+
+	<!--ログインユーザー基本情報の取得-->
+	<select id="getTestData" resultType="TestBean">
+		SELECT 
+			DEPO_CD
+			,BUMON_CD
+ 		FROM 
+ 			TEST02
+	</select>
+	
+	<insert id="insertTest">
+		INSERT INTO 
+			TEST02(
+				DEPO_CD, 
+				BUMON_CD
+			)
+		VALUES(
+			#{PARAM_DEPO_CD}, 
+			#{PARAM_BUMON_CD}
+			)
+	</insert>
+	
+	<update id="updateTest">
+		UPDATE 
+			TEST02
+		SET	
+			BUMON_CD = #{PARAM_BUMON_CD}
+		WHERE 
+			DEPO_CD = #{PARAM_DEPO_CD} 
+	</update>
+	
+	<delete id="deleteTest">
+		DELETE FROM 
+			TEST02
+		WHERE 
+			DEPO_CD = #{PARAM_DEPO_CD} 
+	</delete>
+	
+	<select id="getListUser" resultType="LoginUserBean">
+		SELECT
+			UM.XAJGYC USER_ID,								<!-- ユーザーID -->
+			UM.PASSWORD PASSWORD,							<!-- ユーザーID -->
+			UM.PW_EXPIRE PW_EXPIRE,							<!-- パスワード有効終了日 -->
+			UM.PW_SET PW_SET_DATE,							<!-- パスワード設定日 -->
+			UM.XAJYIB USER_FLAG,							<!-- 従業員区分-->
+			UM.ORIGINAL ORIGINAL_FLAG,						<!-- 組織区分 -->
+			UM.BELONG BELONG,								<!-- 所属 -->
+			UM.BELONG_NAME BELONG_NAME,						<!-- 所属名称 -->
+			UM.XABMCD DEPARTMENT_ID,						<!-- SS部門コード -->
+			UM.XATNPC STORE_ID,								<!-- 店舗コード -->
+			UM.XASEKJ KANJI_SEI,							<!-- 姓漢字 -->
+			UM.XAMIKJ KANJI_MEI,							<!-- 名漢字-->
+			UM.XASEKN KANA_SEI,								<!-- 姓カナ-->
+			UM.XAMIKN KANA_MEI,								<!-- 名カナ -->
+			UM.XASEXB SEX,									<!-- 性別 -->
+			UM.MOBILE_CORP MOBILE,							<!-- 携帯 -->
+			UM.XASYIC POSITION_ID,							<!-- 役職ID -->
+			UM.EXTENTION NAISEN,							<!-- 内線 -->
+			UM.ROLE ROLE,									<!-- システム利用区分 -->
+			UM.VIEW_PHOTO VIEW_PHOTO_FLAG,					<!-- 社員写真閲覧区分 -->
+			UM.TRMAIL_ADDRESS,								<!-- 転送先メールアドレス -->
+			UM.PHOTO_ADD PHOTO_ADDRESS,						<!-- 社員写真アドレス -->
+			UM.CREATE_DATE CREATE_DATE,						<!-- 作成日時 -->
+			UM.CREATE_BY CREATE_BY,							<!-- 作成ユーザID -->
+			UM.UPDATE_DATE UPDATE_DATE,						<!-- 更新日時 -->
+			UM.UPDATE_BY UPDATE_BY,							<!-- 更新ユーザID -->
+			UM.PW_SET PW_SET_DATE,							<!-- パスワード設定日 -->
+			UM.ORIGINAL_NAME ORIGINAL_NAME,					<!-- 組織区分名称 -->
+			T4.XUDTO1 POSITION_NAME,						<!-- 役職名称 -->
+			UM.UNIFICATION_ID,								<!-- 統括コード -->
+			UM.BUSINESS_ID,									<!-- 事業コード -->
+			UM.SALES_ID,									<!-- 営業部コード -->
+			T1.XUDTO1 UNIFICATION_NM,						<!-- 統括 -->
+			T2.XUDTO1 BUSINESS_NM,							<!-- 事業 -->
+			T3.XUDTO1 SALES_NM,								<!-- 営業部 -->
+			TO_CHAR(UM.NECESSITY_DISPLAY_START_DATE, 'yyyy/MM/dd') AS NECESSITY_DISPLAY_START_DATE,				<!-- 重要なお知らせ 表示開始日 -->
+			T5.XUDTO1 USER_FLAG_NAME,						<!-- 従業員区分名称-->
+			UM.YCTNPB STORE_FC_FLAG,						<!-- 店舗区分-->
+			UM.YCONRC OWNER_ID,								<!-- オーナーコード-->
+			UM.MAIL_NOTICE_FLAG MAIL_NOTICE_FLAG,			<!-- メール通知不要フラグ-->
+			UM.MAIL MAIL,									<!-- メール-->
+			CASE WHEN UM.ORIGINAL='0' OR (UM.ORIGINAL='1' AND XAJYIB='1') THEN T4.XUDTO1
+			ELSE T6.XUDTO1 END XAALLK_NAME						<!-- アルバイト名称-->
+		FROM
+			V_NXXA00P_LOGIN UM								<!-- 従業員マスタビュー_ログイン -->
+		LEFT JOIN NXXU00P T1								<!-- 各種マスタ -->
+			ON UM.UNIFICATION_ID = T1.XUDATC				<!-- 統括 -->
+			AND T1.XUKEYC = '1'
+			AND T1.XUDLTF = ' '
+		LEFT JOIN NXXU00P T2								<!-- 各種マスタ -->
+			ON UM.BUSINESS_ID = T2.XUDATC					<!-- 事業 -->
+			AND T2.XUKEYC = '2'
+			AND T2.XUDLTF = ' '
+		LEFT JOIN NXXU00P T3
+			ON UM.SALES_ID = T3.XUDATC						<!-- 各種マスタ -->
+			AND T3.XUKEYC = '3'								<!-- 営業 -->
+			AND T3.XUDLTF = ' '
+		LEFT JOIN NXXU00P T4
+			ON UM.XASYIC = T4.XUDATC						<!-- 各種マスタ -->
+			AND T4.XUKEYC = '233'							<!-- 役職ID -->
+			AND T4.XUDLTF = ' '
+		LEFT JOIN NXXU00P T5								<!-- 各種マスタ -->
+			ON UM.XAJYIB = T5.XUDATC						<!-- 従業員区分 -->
+			AND T5.XUKEYC = '19'
+			AND T5.XUDLTF = ' '
+		LEFT JOIN NXXU00P T6
+			ON UM.XAALLK = T6.XUDATC						<!-- 各種マスタ -->
+			AND T6.XUKEYC = '233'							<!-- 営業 -->
+			AND T6.XUDLTF = ' '
+	</select>
+	
+	<select id="getTestDataJqGrid" resultType="TestBean">
+		SELECT 
+			DEPO_CD
+			,BUMON_CD
+ 		FROM 
+ 			TEST02
+	</select>
+	<select id="getMenuList" resultType="MenuNode">
+		SELECT
+			MENU_HYOUJI_NM as text
+		FROM
+			PM03
+		WHERE 
+			ROWNUM<![CDATA[<=]]>10
+		ORDER BY 
+			PROGRAM_ID
+	</select>
+	
+	<select id="getMenuListForChild" resultType="MenuNode">
+		SELECT
+			MENU_HYOUJI_NM as text
+		FROM
+			PM03
+		WHERE 
+			ROWNUM<![CDATA[<=]]>2
+		ORDER BY 
+			PROGRAM_ID
+	</select>
+</mapper>

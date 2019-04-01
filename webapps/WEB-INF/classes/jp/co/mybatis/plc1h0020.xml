@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="plc1h0020">
+
+	<select id="getMeisaiList" resultType="plc1h0020Vo">
+		SELECT 
+			ISNULL(T1.GYOUSYA_CD,'') || ',' || ISNULL(T1.GYOUSYA_NM,'') || ',' || ISNULL(T1.DENWA_NO,'') || ',' || 
+			ISNULL(T1.SHIIRESAKI_CD,'') || ',' || ISNULL(T1.ZEI_KB,'') || ',' || ISNULL(T1.KEIYAKU_KAISHI_DT,'') || ',' || 
+			ISNULL(T1.KEIYAKU_SYUURYO_DT,'')  as listKey,
+			T1.GYOUSYA_CD,
+			T1.GYOUSYA_NM,
+			T1.GYOUSYA_KJ,
+			P28.GAIBU_CD AS KANRIMOTO_KAISYA_NM,
+			T1.DENWA_NO
+		FROM PM12 T1
+		LEFT OUTER JOIN PM28 P28 ON P28.KYOUTUU_CD = '160' AND T1.KANRIMOTO_KAISYA_KB = P28.NAIBU_CD AND P28.SAKUJO_KB = '0'
+		WHERE 
+			T1.SAKUJO_KB = '0'
+		<if test='PARAM_GYOUSYA_CD != null and PARAM_GYOUSYA_CD != "" '>
+			AND T1.GYOUSYA_CD LIKE #{PARAM_GYOUSYA_CD} '%'
+		</if>
+		<if test='PARAM_GYOUSYA_NM != null and PARAM_GYOUSYA_NM != "" '>
+			AND T1.GYOUSYA_NM LIKE '%' #{PARAM_GYOUSYA_NM} '%'
+		</if>
+		<if test='PARAM_KANRIMOTOKAISYA_KB != null and PARAM_KANRIMOTOKAISYA_KB != "" '>
+			AND T1.KANRIMOTO_KAISYA_KB = #{PARAM_KANRIMOTOKAISYA_KB}
+		</if>
+		ORDER BY T1.GYOUSYA_KJ
+	</select>
+	
+</mapper>

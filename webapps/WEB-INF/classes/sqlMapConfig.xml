@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration 
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<settings>  
+		<setting name="mapUnderscoreToCamelCase" value="true" />  
+		<setting name="callSettersOnNulls" value="true" />
+		<setting name="jdbcTypeForNull" value="NULL"/>
+    </settings>  
+	<typeAliases>
+		<typeAlias alias="loginUserBean" type="jp.co.fourseeds.fsnet.beans.LoginUserBean"/>
+		<typeAlias alias="menuTreeBean" type="jp.co.fourseeds.fsnet.beans.MenuTreeBean"/>
+		
+		<typeAlias alias="TestBean" type="jp.co.fourseeds.fsnet.beans.test.TestBean"/>
+		<typeAlias alias="PagingCommon" type="jp.co.fourseeds.fsnet.beans.test.PagingCommon"/>
+		<typeAlias alias="plc1c0130Model" type="jp.co.plc.pl1.c0130.PLC1C0130Model"/>
+		<typeAlias alias="plc1c0120Model" type="jp.co.plc.pl1.c0120.PLC1C0120Model"/>
+		<typeAlias alias="plc1h0020Vo" type="jp.co.plc.pl1.h0020.PLC1H0020Vo"/>
+		<typeAlias alias="MenuNode" type="jp.co.plc.pl1.menu.MenuNode"/>
+		<typeAlias alias="ccmPm01MstModel" type="jp.co.common.mst.pm01.CCMPm01MstModel"/>
+		<typeAlias alias="ccmPm28MstModel" type="jp.co.common.mst.pm28.CCMPm28MstModel"/>
+		<typeAlias alias="ccmPm32MstModel" type="jp.co.common.mst.pm32.CCMPm32MstModel"/>
+		<typeAlias alias="ccmPm43MstModel" type="jp.co.common.mst.pm43.CCMPm43MstModel"/>
+	</typeAliases>
+
+	<typeHandlers>
+		<typeHandler handler="com.ntscn.frame.util.NullToBlankStringTypeHandler"/>
+	</typeHandlers>
+
+</configuration>

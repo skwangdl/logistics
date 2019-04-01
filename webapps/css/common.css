@@ -1,0 +1,1601 @@
+/* BODYの基本設定 */
+body {
+	padding: 0px;
+	margin: 0px;
+	background-color: #fff;
+	color: #000;
+	font-size: 10pt;
+	font-family: 'ＭＳ ゴシック';
+}
+
+table {
+	font-size:10pt;
+}
+
+/* システムヘッダー */
+TABLE.sysHeader {
+
+	width: 100%;
+	border-collapse:collapse;
+	background-color:white;
+	
+
+	color : aqua;
+	font-size:13pt;
+	font-weight:bold;
+	padding:0px;
+	margin:0px;
+
+	background-color:#ffff80;
+
+}
+table.sysHeader td.title {
+	height: 28px;
+	border-width: 0px;
+	width:60%;
+}
+table.sysHeader td.shamei {
+	height: 11px;
+	border-width: 0px;
+	width:40%;
+}
+
+table.sysHeader td.sep {
+	background-color:#00cccc;
+	height: 11px;
+	border-width: 0px;
+	font-size:10pt;
+
+}
+
+table.sysHeader td.date {
+	background-color:#00cccc;
+	border-width: 0px;
+	font-size:10pt;
+	color:black;
+	text-align:right;
+
+}
+table.sysHeader td.commonButton {
+	background-color:#00cccc;
+	border-width: 0px;
+	font-size:10pt;
+	color:black;
+	text-align:left;
+
+}
+table.sysHeader td.helpButton {
+	background-color:#00cccc;
+	border-width: 0px;
+	font-size:10pt;
+	color:black;
+	text-align:right;
+
+}
+/* 利用者情報領域の設定 */
+table.info {
+	
+	width: 994px;	
+	border-collapse:collapse;
+	background-color:#CCCFFF;
+}
+
+/* 従業員（タイトル） */
+table.info td.t_syainno {
+	border-width:0 2pt 0 0;
+	border-style:solid;
+	border-color:white;
+	width:8%;
+	background-color:#D8EAF5;
+	font-size:10pt;
+	padding:5px;
+}
+
+/* 従業員番号 */
+table.info td.syainno {
+	border-width:0 2pt 0 0;
+	border-style:solid;
+	border-color:white;
+	width:8%;
+	background-color:white;
+	font-size:10pt;
+	padding:5px;
+}
+
+/* 従業員名 */
+table.info td.syain {
+	border-width:0 2pt 0 0;
+	border-style:solid;
+	border-color:white;
+	width:22%;
+	background-color:white;
+	font-size:10pt;
+	padding:5px;
+}
+
+/* 所属部署（タイトル） */
+table.info td.t_syozoku {
+	border-width:0 2pt 0 0;
+	border-style:solid;
+	border-color:white;
+	width:8%;
+	background-color:#D8EAF5;
+	font-size:10pt;
+	padding:5px;
+}
+
+
+/* 所属部署コード */
+table.info td.syozoku {
+	border-width:0 2pt 0 0;
+	border-style:solid;
+	border-color:white;
+	width:8%;
+	background-color:white;
+	font-size:10pt;
+	padding:5px;
+}
+
+/* 所属部署名 */
+table.info td.bu {
+	border:none;
+	width:31%;
+	background-color:white;
+	font-size:10pt;
+	padding:5px;
+}
+
+
+
+/* エラーメッセージ */
+.error {
+	color:#ff0000;
+}
+
+
+/* タイトル表示領域の設定 */
+table.header {
+	width: 994px;	
+	border-collapse:collapse;
+	background-color:white;
+	
+}
+
+table.header td.labelValue {
+	padding-left:5px;
+	height:26px;
+	color:#fff;
+	font-size:10pt;
+	font-weight:bold;
+	text-align:right;
+}
+
+table.header td.title {
+	padding-left:5px;
+	width:80%;
+	height:26px;
+		/* background-color:#00008b; */
+	/* background-color:#008080; */
+	background-color:#FF8080;
+	color:#fff;
+	font-size:10pt;
+	font-weight:bold;
+}
+
+table.header td.datetime {
+	padding-left:5px;
+	width:20%;
+	height:26px;
+	background-color:#3366CC;
+	color:#fff;
+	font-size:10pt;
+	font-weight:bold;
+	text-align:right;
+}
+
+table.header td.kubun {
+	width:12%;
+	height:26px;
+	background-color:#4AA5FF;
+	color:#fff;
+	font-size:10pt;
+	font-weight:bold;
+	text-align:center;
+	background-image:url(../image/top_bar_right.jpg);
+	background-repeat: repeat-x;
+}
+
+/* タイトル表示領域の設定(ポップアップ) */
+table.headerPopup {
+	width: 660px;	
+	border-collapse:collapse;
+	background-color:white;
+	
+}
+
+table.headerPopup td.title {
+	padding-left:5px;
+	width:80%;
+	height:26px;
+	background-color:#00008b;
+	color:#fff;
+	font-size:10pt;
+	font-weight:bold;
+}
+
+
+
+
+/* 業務用釦配置部 */
+.button{
+	border: 1px solid #00a5e0;
+	color : white;
+	background-color : #00a5e0;
+	width:80px;
+	height:20px;
+}
+
+.semiLongButton{
+	border: 1px solid blue;
+	color : blue;
+	background-color : #f0ffff;
+	width:130px;
+	height:20px;
+}
+
+.longButton{
+	border: 1px solid blue;
+	color : blue;
+	background-color : #f0ffff;
+	width:180px;
+	height:20px;
+}
+
+.freeButton {
+	border: 1px solid blue;
+	color : blue;
+	background-color : #f0ffff;
+	height:20px;
+}
+
+
+/* サブタイトル */
+table.blockHeader {
+	width: 994px;
+	margin: 1px 1px;
+	padding: 1px;
+	border-collapse:collapse;
+	background-color: #3366CC;
+	margin-bottom:-1px;
+}
+table.blockHeader td.title {
+	color: #fff;
+	font-size: 10pt;
+	font-weight: bold;
+	padding: 1px;
+
+}
+/* 2015/09/22 NTS ZHULIWU 【No336】IE11対応依頼。ADD Start */
+table.blockHeader td.btnLine {
+background-color: white;
+}
+/* 2015/09/22 NTS ZHULIWU 【No336】IE11対応依頼。ADD End */
+
+/* サブタイトル 小ウンドウ*/
+table.blockHeaderPopup {
+	width: 660px;
+	margin: 1px 1px;
+	padding: 1px;
+	border-collapse:collapse;
+	background-color: #3366CC;
+	margin-bottom:-1px;
+}
+table.blockHeaderPopup td.title {
+	color: #fff;
+	font-size: 10pt;
+	font-weight: bold;
+	padding: 1px;
+
+}
+
+table.blockHeader td.title font.indent {
+	color: red;
+	font-size: 10pt;
+}
+
+
+/* メイン情報 */
+table.main {
+	width: 994px;
+	border-collapse:collapse;
+	margin: 1px 1px;
+
+}
+table.main td {
+	border: 1px solid white;
+	padding:1px;
+	height:15px;
+}
+
+table.main td.title {
+	background-color:#CEE7F7;
+	font-size: 10pt;
+	text-align:right;
+	vertical-align: middle;
+	font-weight: bold;
+}
+
+table.main td.lineHeader {
+	background-color:#CBEDFC;
+	font-size: 10pt;
+	text-align:center;
+	vertical-align: middle;
+	background-color:#CCCFFF;
+	font-weight: bold;
+
+}
+
+table.main td.value {
+	font-size:10pt;
+	text-align:left;
+	vertical-align: middle;
+}
+table.main td.number {
+	font-size:10pt;
+	text-align:right;
+	vertical-align: middle;
+}
+
+table.main td.date {
+	font-size:10pt;
+	text-align:center;
+	vertical-align: middle;
+}
+
+table.main td.tell {
+	font-size:10pt;
+	text-align:center;
+	vertical-align: middle;
+}
+
+table.main td.kbn {
+	font-size:10pt;
+	text-align:center;
+	vertical-align: middle;
+}
+
+
+/* メイン情報 小ウンドウ*/
+table.mainPopup {
+	width: 660px;
+	border-collapse:collapse;
+	margin: 1px 1px;
+
+}
+table.mainPopup td {
+	border: 1px solid #666666;
+	padding:1px;
+	height:15px;
+}
+
+}
+table.mainPopup td {
+	border: 1px solid #666666;
+	padding:1px;
+	height:15px;
+}
+
+table.mainPopup td.title {
+	background-color:#CBEDFC;
+	font-size: 10pt;
+	text-align:right;
+	vertical-align: middle;
+	background-color:#CCCFFF;
+	font-weight: bold;
+}
+
+table.mainPopup td.lineHeader {
+	background-color:#CBEDFC;
+	font-size: 10pt;
+	text-align:center;
+	vertical-align: middle;
+	background-color:#CCCFFF;
+	font-weight: bold;
+
+}
+
+table.mainPopup td.value {
+	font-size:10pt;
+	text-align:left;
+	vertical-align: middle;
+}
+table.mainPopup td.number {
+	font-size:10pt;
+	text-align:right;
+	vertical-align: middle;
+}
+
+table.mainPopup td.date {
+	font-size:10pt;
+	text-align:center;
+	vertical-align: middle;
+}
+
+table.mainPopup td.tell {
+	font-size:10pt;
+	text-align:center;
+	vertical-align: middle;
+}
+
+table.mainPopup td.kbn {
+	font-size:10pt;
+	text-align:center;
+	vertical-align: middle;
+}
+
+/* ページングエリア */
+table.paging {
+	width: 994px;
+	borde:none;
+	margin: 2px 1px;
+
+}
+table.paging td.jump {
+	text-align:left;
+	width: 50%;
+}
+table.paging td.count {
+	text-align:right;
+	width: 50%;
+}
+
+/* ページングエリア(ポップアップ) */
+table.pagingPopup {
+	width: 660px;
+	borde:none;
+	margin: 2px 1px;
+
+}
+table.pagingPopup td.jump {
+	text-align:left;
+	width: 50%;
+}
+table.pagingPopup td.count {
+	text-align:right;
+	width: 50%;
+}
+
+/* サブ画面情報 */
+table.sub {
+	width: 840px;
+	border-collapse:collapse;
+	margin: 1px 1px;
+
+}
+table.sub td {
+	border: 1px solid #666666;
+	padding:1px;
+}
+
+table.sub td.title {
+	background-color:#CBEDFC;
+	font-size: 10pt;
+	text-align:right;
+	vertical-align: middle;
+	background-color:#CCCFFF;
+	font-weight: bold;
+}
+
+table.sub td.lineHeader {
+	background-color:#CBEDFC;
+	font-size: 10pt;
+	text-align:center;
+	vertical-align: middle;
+	background-color:#CCCFFF;
+	font-weight: bold;
+
+}
+
+table.sub td.value {
+	font-size:10pt;
+	text-align:left;
+	vertical-align: middle;
+}
+table.sub td.number {
+	font-size:10pt;
+	text-align:right;
+	vertical-align: middle;
+}
+
+table.sub td.date {
+	font-size:10pt;
+	text-align:center;
+	vertical-align: middle;
+}
+
+table.sub td.tell {
+	font-size:10pt;
+	text-align:center;
+	vertical-align: middle;
+}
+
+table.sub td.kbn {
+	font-size:10pt;
+	text-align:center;
+	vertical-align: middle;
+}
+
+/* サブ画面・サブタイトル */
+table.subBlockHeader {
+	width: 840px;
+	margin: 1px 1px;
+	padding: 1px;
+	border-collapse:collapse;
+	background-color: #3366CC;
+	margin-bottom:-1px;
+}
+
+table.subBlockHeader td.title {
+	color: #fff;
+	font-size: 10pt;
+	font-weight: bold;
+	padding: 1px;
+
+}
+
+table.subBlockHeader td.title font.indent {
+	color: red;
+	font-size: 10pt;
+}
+
+
+/* メニュー領域 */
+table.menuTop {
+	width: 994px;
+}
+table.menu {
+
+	border:none;
+	margin: 1px 1px;
+	color: blue;
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+table.menu td.title {
+	border:none;
+	margin: 1px 1px;
+	color: black;
+}
+
+.titleIndent {
+	border:none;
+	margin: 1px 1px;
+	color: red;
+}
+
+
+.readOnly {
+	vertical-align: middle;
+	border:	none;
+	max-width: 100px;
+	font-size: 10pt;
+	text-align:left;
+}
+
+
+.menuLink {
+    font-size: 13pt;
+}
+.menuLink2 {
+    font-size: 13pt;
+    border:none;
+	margin: 1px 1px;
+	color: red;
+}
+
+
+/***************************************************/
+/* テキスト 　入力不可色 */
+/***************************************************/
+/*テキストボックス入力不可（1桁）*/
+.txtInp1 {
+ime-mode:     inactive;
+background-color: #e6e6fa;
+width: 12px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力不可（2桁）*/
+.txtInp2 {
+ime-mode:     inactive;
+background-color: #e6e6fa;
+width: 16px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力不可（3桁）*/
+.txtInp3 {
+ime-mode:     inactive;
+background-color: #e6e6fa;
+width: 28px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力不可（4桁）*/
+.txtInp4 {
+ime-mode:     inactive;
+background-color: #e6e6fa;
+width: 34px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力不可（5桁）*/
+.txtInp5 {
+ime-mode:     inactive;
+background-color: #e6e6fa;
+width: 40px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力不可（6桁）*/
+.txtInp6 {
+ime-mode:     inactive;
+background-color: #e6e6fa;
+width: 50px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力不可（7桁）*/
+.txtInp7 {
+ime-mode:     inactive;
+background-color: #e6e6fa;
+width: 60px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力不可（8桁）*/
+.txtInp8 {
+ime-mode:     inactive;
+background-color: #e6e6fa;
+width: 64px;
+Height:20px;
+font-size: 12;
+}
+/*テキストボックス入力不可（10桁）*/
+.txtInp10 {
+ime-mode:     inactive;
+background-color: #e6e6fa;
+width: 78px;
+Height:20px;
+font-size: 12;
+}
+/*テキストボックス入力不可（15桁）*/
+.txtInp15 {
+ime-mode:     inactive;
+background-color: #e6e6fa;
+width: 117px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力不可（20桁）*/
+.txtInp20 {
+ime-mode:     inactive;
+background-color: #e6e6fa;
+width: 130px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力不可（25桁）*/
+.txtInp25 {
+ime-mode:     inactive;
+background-color: #e6e6fa;
+width: 153px;
+Height:20px;
+font-size: 12;
+}
+/*テキストボックス入力不可（25桁）*/
+.txtInp28 {
+ime-mode:     inactive;
+background-color: #e6e6fa;
+width: 180px;
+Height:20px;
+font-size: 12;
+}
+/*テキストボックス入力不可（30桁）*/
+.txtInp30 {
+ime-mode:     inactive;
+background-color: #e6e6fa;
+width: 200px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力不可（40桁）*/
+.txtInp40Han {
+ime-mode:     inactive;
+background-color: #e6e6fa;
+width: 260px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力不可（全角40桁）*/
+.txtInp40 {
+ime-mode:     inactive;
+background-color: #e6e6fa;
+width: 350px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力不可（80桁）*/
+.txtInp80 {
+ime-mode:     inactive;
+background-color: #e6e6fa;
+width: 450px;
+Height:20px;
+font-size: 12;
+}
+
+/***************************************************/
+/* テキスト 　入力必須色 */ 
+/***************************************************/
+/*テキストボックス入力必須（1桁）*/
+.txtInp1H {
+ime-mode:     inactive;
+background-color: #ffe4c4;
+width: 12px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力必須（2桁）*/
+.txtInp2H {
+ime-mode:     inactive;
+background-color: #ffe4c4;
+width: 16px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力必須（3桁）*/
+.txtInp3H {
+ime-mode:     inactive;
+background-color: #ffe4c4;
+width: 28px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力必須（4桁）*/
+.txtInp4H {
+ime-mode:     inactive;
+background-color: #ffe4c4;
+width: 34px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力必須（5桁） */
+.txtInp5H {
+ime-mode:     inactive;
+background-color: #ffe4c4;
+width: 40px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力必須（6桁）*/
+.txtInp6H {
+ime-mode:     inactive;
+background-color: #ffe4c4;
+width: 50px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力必須（7桁）*/
+.txtInp7H {
+ime-mode:     inactive;
+background-color: #ffe4c4;
+width: 60px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力必須（8桁）*/
+.txtInp8H {
+ime-mode:     inactive;
+background-color: #ffe4c4;
+width: 64px;
+Height:20px;
+font-size: 12;
+}
+/*テキストボックス入力（全角６桁）*/
+.txtInp6NNH {
+ime-mode:     active;
+background-color: #ffe4c4;
+width: 78px;
+Height:20px;
+font-size: 12;
+}
+/*テキストボックス入力必須（10桁）*/
+.txtInp10H {
+ime-mode:     inactive;
+background-color: #ffe4c4;
+width: 78px;
+Height:20px;
+font-size: 12;
+}
+/*テキストボックス入力必須（15桁）*/
+.txtInp15H {
+ime-mode:     inactive;
+background-color: #ffe4c4;
+width: 117px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力必須（20桁）*/
+.txtInp20H {
+ime-mode:     inactive;
+background-color: #ffe4c4;
+width: 180px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力必須（全角15桁）*/
+.txtInp15NH {
+ime-mode:     active;
+background-color: #ffe4c4;
+width: 230px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力必須（全角40桁）*/
+.txtInp40NH {
+ime-mode:     active;
+background-color: #ffe4c4;
+width: 340px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力必須（全角50桁）*/
+.txtInp50NH {
+ime-mode:     active;
+background-color: #ffe4c4;
+width: 425px;
+Height:20px;
+font-size: 12;
+}
+
+
+/*テキストボックス入力必須（80桁）*/
+.txtInp80H {
+ime-mode:     inactive;
+background-color: #ffe4c4;
+width: 450px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力必須（100桁）*/
+.txtInp100H {
+ime-mode:     inactive;
+background-color: #ffe4c4;
+width: 565px;
+Height:20px;
+font-size: 12;
+}
+
+/***************************************************/
+/* テキスト　　入力可色*/　
+/***************************************************/
+/*テキストボックス入力（1桁）*/
+.txtInp1N {
+ime-mode:     inactive;
+background-color: white;
+width: 12px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力（2桁）*/
+.txtInp2N {
+ime-mode:     inactive;
+background-color: white;
+width: 16px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力（3桁）*/
+.txtInp3N {
+ime-mode:     inactive;
+background-color: white;
+width: 28px;
+Height:20px;
+font-size: 12;
+}
+
+
+/*テキストボックス入力（4桁）*/
+.txtInp4N {
+ime-mode:     inactive;
+background-color: white;
+width: 34px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力（5桁）*/
+.txtInp5N {
+ime-mode:     inactive;
+background-color: white;
+width: 40px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力（6桁）*/
+.txtInp6N {
+ime-mode:     inactive;
+background-color: white;
+width: 50px;
+Height:20px;
+font-size: 12;
+}
+
+
+/*テキストボックス入力（7桁）*/
+.txtInp7N {
+ime-mode:     inactive;
+background-color: white;
+width: 60px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力（8桁）*/
+.txtInp8N {
+ime-mode:     inactive;
+background-color: white;
+width: 64px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力（10桁）*/
+.txtInp10N {
+ime-mode:     inactive;
+background-color: white;
+width: 78px;
+Height:20px;
+font-size: 12;
+}
+
+
+
+/*テキストボックス入力（13桁）*/
+.txtInp13N {
+ime-mode:     inactive;
+background-color: white;
+width: 96px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力（15桁）*/
+.txtInp15N {
+ime-mode:     inactive;
+background-color: white;
+width: 117px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力（15桁）*/
+.txtInp17N {
+ime-mode:     inactive;
+background-color: white;
+width: 133px;
+Height:20px;
+font-size: 12;
+}
+
+
+/*テキストボックス入力（15桁）*/
+.txtInp20N {
+ime-mode:     inactive;
+background-color: white;
+width: 159px;
+Height:20px;
+font-size: 12;
+}
+
+
+/*テキストボックス入力（30桁）*/
+.txtInp30N {
+ime-mode:     inactive;
+background-color: white;
+width: 250px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力（全角８桁）*/
+.txtInp8NN {
+ime-mode:     active;
+background-color: white;
+width: 50px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力（全角15桁）*/
+.txtInp15NN {
+ime-mode:     active;
+background-color: white;
+width: 230px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力（全角15桁）*/
+.txtInp20N {
+ime-mode:     active;
+background-color: white;
+width: 200px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力（全角25桁）*/
+.txtInp25N {
+ime-mode:     active;
+background-color: white;
+width: 250px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力（40桁）*/
+.txtInp40NHan {
+ime-mode:     inactive;
+background-color: white;
+width: 260px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力（全角40桁）*/
+.txtInp40N {
+ime-mode:     active;
+background-color: white;
+width: 350px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力必須（全角50桁）*/
+.txtInp50N {
+ime-mode:     active;
+background-color: white;
+width: 425px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力（全角60桁）*/
+.txtInp60N {
+ime-mode:     active;
+background-color: white;
+width: 500px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力（80桁）*/
+.txtInp80N {
+ime-mode:     inactive;
+background-color: white;
+width: 450px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力（100桁）*/
+.txtInp100N {
+ime-mode:     inactive;
+background-color: white;
+width: 565px;
+Height:20px;
+font-size: 12;
+}
+
+
+/*テキストボックス入力（全角80桁）*/
+.txtInp80NN {
+ime-mode:     active;
+background-color: white;
+width: 880px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力（120桁）*/
+.txtInp120N {
+border-style: none;
+ime-mode:     active;
+background-color: white;
+width: 600px;
+Height:20px;
+font-size: 12;
+}
+
+/***************************************************/
+/* 右詰テキスト 　入力不可色 */　
+/***************************************************/
+
+/* 右詰テキストボックス */
+/*テキストボックス入力不可（5桁）*/
+.txtInp5r {
+ime-mode:     inactive;
+background-color: #e6e6fa;
+width: 40px;
+Height:20px;
+text-align : right;
+font-size: 12;
+}
+
+/*テキストボックス入力不可（8桁）*/
+.txtInp8r {
+ime-mode:     inactive;
+background-color: #e6e6fa;
+width: 50px;
+Height:20px;
+text-align : right;
+font-size: 12;
+}
+/*テキストボックス入力不可（10桁）数値８桁*/
+.txtInp10r {
+ime-mode:     inactive;
+background-color: #e6e6fa;
+width: 60px;
+Height:20px;
+text-align : right;
+font-size: 12;
+}
+/*テキストボックス入力不可（15桁）数値１２桁*/
+.txtInp15r {
+ime-mode:     inactive;
+background-color: #e6e6fa;
+width: 85px;
+Height:20px;
+text-align : right;
+font-size: 12;
+}
+
+/*テキストボックス入力入力不可（20桁）*/
+.txtInp20r {
+ime-mode:     inactive;
+background-color:  #e6e6fa;
+width: 90px;
+Height:20px;
+font-size: 12;
+}
+
+/*テキストボックス入力入力不可（40桁）*/
+.txtInp40r {
+ime-mode:     inactive;
+background-color:  #e6e6fa;
+width: 180px;
+Height:20px;
+font-size: 12;
+}
+
+/***************************************************/
+/* 右詰テキスト  　　入力可色*/
+/***************************************************/
+
+.txtInp3Nr {
+ime-mode:     inactive;
+background-color: white;
+width: 28px;
+Height:20px;
+text-align : right;
+font-size: 12;
+}
+
+/*テキストボックス入力（5桁）*/
+.txtInp5Nr {
+ime-mode:     inactive;
+background-color: white;
+width: 40px;
+Height:20px;
+text-align : right;
+font-size: 12;
+}
+
+/*テキストボックス入力（8桁）*/
+
+.txtInp8Nr {
+ime-mode:     inactive;
+background-color: white;
+width: 64px;
+Height:20px;
+text-align : right;
+font-size: 12;
+}
+
+/*テキストボックス入力（10桁）数値８桁*/
+.txtInp10Nr {
+ime-mode:     inactive;
+background-color: white;
+width: 60px;
+Height:20px;
+text-align : right;
+font-size: 12;
+}
+
+/*テキストボックス入力（15桁）数値１２桁*/
+.txtInp15Nr {
+ime-mode:     inactive;
+background-color: white;
+width: 85px;
+Height:20px;
+text-align : right;
+font-size: 12;
+}
+/*テキストボックス入力（80桁）*/
+.txtInp80Nr {
+ime-mode:     active;
+background-color: white;
+width: 480px;
+Height:20px;
+text-align : right;
+font-size: 12;
+}
+
+/***************************************************/
+/* 右詰テキスト  　　入力必須色*/
+/***************************************************/
+
+.txtInp3Hr {
+ime-mode:     inactive;
+background-color:  #ffe4c4;
+width: 28px;
+Height:20px;
+text-align : right;
+font-size: 12;
+}
+
+/*テキストボックス入力（15桁）数値１２桁*/
+.txtInp15Hr {
+ime-mode:     inactive;
+background-color: #ffe4c4;
+width: 85px;
+Height:20px;
+text-align : right;
+font-size: 12;
+}
+
+/*テキストボックス入力（20桁）数値１７桁*/
+.txtInp20Hr {
+ime-mode:     inactive;
+background-color: #ffe4c4;
+width: 130px;
+Height:20px;
+text-align : right;
+font-size: 12;
+}
+
+/***************************************************/
+/* テーブル　行色指定　　　　　　　*/　
+/***************************************************/
+/* ヘッダ部ボタン表示行色　青　*/
+.btnLine {
+background-color: #6495ed;
+}
+
+/* 削除行色　薄いスカイブルー　　*/
+.DeleteLine {
+background-color: #7fffd4;
+}
+
+/* 小計　黄色　*/
+.TotalLevel {
+background-color: #ffff99;
+}
+
+/* 中計　黄色　*/
+.TotalLevel1 {
+background-color: #ffff00;
+}
+
+/* 大計　だいだい　*/
+.TotalLevel2 {
+background-color: #ffd700;
+}
+
+/* 赤伝票　トマト　*/
+.akaLine {
+background-color: #FF6347;
+}
+
+/* 黒伝票　ライムグリーン　*/
+.kuroLine {
+background-color: #32CF32;
+}
+
+/* ドライバ荷主　ライトシアン　*/
+.ninusiLine {
+background-color: #E0FFFF;
+font-weight:bold;
+}
+
+/*テキストボックス入力（120桁）*/
+.txtnon
+{
+border-style: none;
+ime-mode:     active;
+background-color: white;
+width: 1px;
+Height:1px;
+font-family:"ＭＳ Ｐゴシック";
+font-size: 12;
+}
+.labelField {
+	background-color: #CEE7F7;
+	width: 110px;
+	padding: 3px;
+	text-align: right;
+	vertical-align: middle;
+}
+.valueField {
+	text-align: left;
+	background-color : transparent;
+}
+.char01Col {
+	width: 8px;
+}
+.char02Col {
+	width: 16px;
+}
+
+.char03Col {
+	width: 24px;
+}
+.char04Col {
+	width: 32px;
+}
+.char05Col {
+	width: 40px;
+}
+.char06Col {
+	width: 48px;
+}
+.char07Col {
+	width: 56px;
+}
+.char08Col {
+	width: 64px;
+}
+.char09Col {
+	width: 72px;
+}
+.char10Col {
+	width: 80px;
+}
+.char11Col {
+	width: 88px;
+}
+.char12Col {
+	width: 96px;
+}
+.char13Col {
+	width: 104px;
+}
+.char14Col {
+	width: 112px;
+}
+.char15Col {
+	width: 120px;
+}
+.char16Col {
+	width: 128px;
+}
+.char17Col {
+	width: 136px;
+}
+.char18Col {
+	width: 144px;
+}
+.char19Col {
+	width: 152px;
+}
+.char20Col {
+	width: 160px;
+}
+.char21Col {
+	width: 168px;
+}
+.char22Col {
+	width: 176px;
+}
+.char23Col {
+	width: 184px;
+}
+.char24Col {
+	width: 192px;
+}
+.char25Col {
+	width: 200px;
+}
+.char26Col {
+	width: 208px;
+}
+.char27Col {
+	width: 216px;
+}
+.char28Col {
+	width: 224px;
+}
+.char29Col {
+	width: 232px;
+}
+.char30Col {
+	width: 240px;
+}
+.char32Col {
+	width: 256px;
+}
+.char33Col {
+	width: 262px;
+}
+
+.char34Col {
+	width: 272px;
+}
+
+.char35Col {
+	width: 280px;
+}
+.char36Col {
+	width: 288px;
+}
+.char38Col {
+	width: 304px;
+}
+.char40Col {
+	width: 320px;
+}
+.char42Col {
+	width: 336px;
+}
+.char44Col {
+	width: 352px;
+}
+.char46Col {
+	width: 368px;
+}
+.char46Col {
+	width: 376px;
+}
+.char48Col {
+	width: 384px;
+}
+.char49Col {
+	width: 390px;
+}
+.char50Col {
+	width: 400px;
+}
+.char51Col {
+	width: 408px;
+}
+.char52Col {
+	width: 416px;
+}
+.char53Col {
+	width: 424px;
+}
+
+.char54Col {
+	width: 432px;
+}
+
+.char55Col {
+	width: 442px;
+}
+.char56Col {
+	width: 448px;
+}
+.char58Col {
+	width: 464px;
+}
+.char59Col {
+	width: 472px;
+}
+.char60Col {
+	width: 480px;
+}
+.char62Col {
+	width: 496px;
+}
+.char64Col {
+	width: 512px;
+}
+.char66Col {
+	width: 528px;
+}
+.char68Col {
+	width: 544px;
+}
+.char70Col {
+	width: 560px;
+}
+.char72Col {
+	width: 576px;
+}
+.char74Col {
+	width: 592px;
+}
+.char76Col {
+	width: 608px;
+}
+.char78Col {
+	width: 624px;
+}
+.char79Col {
+	width: 632px;
+}
+.char80Col {
+	width: 640px;
+}
+.char81Col {
+	width: 688px;
+}
+.char82Col {
+	width: 690px;
+}
+.char83Col {
+	width: 704px;
+}
+.char84Col {
+	width: 712px;
+}	
+.char85Col {
+	width: 720px;
+}	
+.char86Col {
+	width: 728px;
+}
+.char96Col {
+	width: 778px;
+}
+.char98Col {
+	width: 784px;
+}
+.char100Col {
+	width: 800px;
+}
+.char110Col {
+	width: 880px;
+}
+.char112Col {
+	width: 896px;
+}

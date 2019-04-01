@@ -1,0 +1,21 @@
+label.error {
+	color: red;
+}
+@media not all, not all, not all, not all
+{
+.checked.icheckbox_minimal {
+	background-position: -37px 0px;
+}
+.hover.icheckbox_minimal {
+	background-position: -17px 0px;
+}
+.iradio_minimal {
+	background-position: -90px 0px;
+}
+.hover.iradio_minimal {
+	background-position: -107px 0px;
+}
+.checked.iradio_minimal {
+	background-position: -127px 0px;
+}
+}

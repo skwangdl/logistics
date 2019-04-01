@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="plc1c0130">
+
+	<select id="getMeisaiList" resultType="PLC1C0130Model">
+		SELECT T1.DEPO_CD as listKey,
+			T2.DEPO_NM as EIGYOUSHO_NM,
+			T2.DEPO_CD as EIGYOUSHO_Cd,
+			T1.DEPO_CD,
+			T1.DEPO_NM,
+			T1.DENWA_NO,
+			T1.SYOZOKUCHIIKI_KB,
+			T1.DEPO_SOSHIKI_KB,
+			T1.KANRIMOTO_KAISYA_KB,
+			T1.SAKUJO_KB
+		FROM PM01 T1, PM01 T2
+		WHERE T1.EIGYOUSHO_CD = T2.DEPO_CD
+		<if test='PARA_DEPO_CD != null and PARA_DEPO_CD != "" '>
+			AND T1.DEPO_CD = #{PARA_DEPO_CD}
+		</if>
+		<if test='PARA_EIGYOUSHO_Cd != null and PARA_EIGYOUSHO_Cd != "" '>
+			AND T1.EIGYOUSHO_Cd = #{PARA_EIGYOUSHO_Cd}
+		</if>
+		<if test='PARA_KANRIMOTO_KAISYA_KB != null and PARA_KANRIMOTO_KAISYA_KB != "" '>
+			AND T1.KANRIMOTO_KAISYA_KB = #{PARA_KANRIMOTO_KAISYA_KB}
+		</if>
+		<if test='PARA_SYOZOKUCHIIKI_KB != null and PARA_SYOZOKUCHIIKI_KB != "" '>
+			AND T1.SYOZOKUCHIIKI_KB = #{PARA_SYOZOKUCHIIKI_KB}	
+		</if>
+		<if test='PARA_SAKUJO_KB == 0 '>
+			AND T1.SAKUJO_KB = #{PARA_SAKUJO_KB}	
+		</if>
+		<if test='PARA_SAKUJO_KB == 1 '>
+			AND T1.SAKUJO_KB = #{PARA_SAKUJO_KB}	
+		</if>
+		ORDER BY T1.EIGYOUSHO_CD,T1.DEPO_CD
+	</select>
+	
+</mapper>

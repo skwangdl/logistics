@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=x-sjis">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<TITLE>‹ÆŽÒ‘I‘ðƒwƒ‹ƒv‹N“®</TITLE>
+<SCRIPT language="JavaScript">
+<!--
+function dlgInit()
+{
+	var k0;
+	var k1;
+	var k2;
+	var k3;
+	var cnt1;
+	var goparm;
+	var form;
+	k0=window.dialogArguments + ",";
+	cnt1 = k0.indexOf(",",0);
+	k1 = k0.substring(0,cnt1);
+	k0 = k0.substring(cnt1+1,k0.length);
+	cnt1 = k0.indexOf(",",0);
+	k2 = k0.substring(0,cnt1);
+	k0 = k0.substring(cnt1+1,k0.length);
+	form = document.forms[0];
+    document.forms[0].PARAM.value = k2;
+	cnt1 = k0.indexOf(",",0);
+	k3 = k0.substring(0,cnt1);
+	k0 = k0.substring(cnt1+1,k0.length);
+	form = document.forms[0];
+    document.forms[0].FLG.value = k3;
+    form.action = "/logistics/h0020/doInit";
+    form.submit();
+    
+}
+//-->
+</script>
+</HEAD>
+<BODY onLoad="dlgInit()">
+<form>
+<INPUT TYPE="hidden" NAME="PARAM">
+<INPUT TYPE="hidden" NAME="FLG">
+</form>
+</BODY>
+</HTML>
+

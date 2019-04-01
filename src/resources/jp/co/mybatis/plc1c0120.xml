@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="plc1c0120">
+
+	<insert id="insert">
+		INSERT INTO PM01
+		(
+			DEPO_CD,		
+			DEPO_SOSHIKI_KB,
+			ITAKU_GYOUSHA_CD,
+			DEPO_NM,		
+			SAKUJO_KB,		
+			TOUROKU_TS,
+			TOUROKU_PGM_OT,	
+			TOUROKU_NM,
+			KOUSHIN_CT,		
+			KOUSHIN_TS,		
+			KOUSHIN_PGM_OT,
+			KOUSHIN_NM
+		)
+		VALUES
+		(
+			#{PARAM_DEPO_CD},		
+			#{PARAM_DEPO_SOSHIKI_KB},
+			#{PARAM_ITAKU_GYOUSHA_CD},
+			#{PARAM_DEPO_NM},		
+			'0',		
+			GETDATE(),
+			'zhu00001',	
+			'zhu00001',
+			'0',
+			GETDATE(),		
+			'zhu00001',
+			'zhu00001'
+		)
+	</insert>
+	<update id="update">
+		UPDATE PM01 SET 
+			DEPO_SOSHIKI_KB = #{PARAM_DEPO_SOSHIKI_KB},
+			ITAKU_GYOUSHA_CD = #{PARAM_ITAKU_GYOUSHA_CD},
+			DEPO_NM = #{PARAM_DEPO_NM}
+		 WHERE 
+			DEPO_CD = #{PARAM_DEPO_CD}
+	</update>
+	<delete id = "delete">
+		DELETE  FROM PM01 
+			WHERE 
+			DEPO_CD = #{PARAM_DEPO_CD}
+	</delete>
+</mapper>

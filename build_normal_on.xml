@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="fsnet" default="war" basedir=".">
+	
+	<!-- Configure the directory into which the web application is built -->
+	<property name="build" value="${basedir}/webapps/WEB-INF"/>
+	<property name="basedir" value="${basedir}"/>
+	
+	<!-- Configure the context path for this application -->
+	<property name="path" value="."/>
+	<property name="lib" value="webapps/WEB-INF/lib" description="ライブラリ配置ディレクトリ"/>
+	<property name="build.war" value="${basedir}/war" description="warファイルビルドディレクトリ"/>	
+	<property name="catalina.home" value="D:\Program Files\Apache Software Foundation\Tomcat 8.0"/>
+	
+	<!-- Configure properties to access the Manager application -->
+	<property name="url"      value="http://10.129.210.41:8080/manager/text"/>
+	<property name="username" value="build-admin"/>
+	<property name="password" value="root"/>
+	<property name="webapp.name" value="fsnet"/>
+	<!-- Tomcat -->
+	<taskdef name="deploy"    classname="org.apache.catalina.ant.DeployTask"/>
+	<taskdef name="undeploy"  classname="org.apache.catalina.ant.UndeployTask"/>
+	<taskdef name="reload"    classname="org.apache.catalina.ant.ReloadTask"/>
+	<taskdef name="resources" classname="org.apache.catalina.ant.ResourcesTask"/>
+	<taskdef name="remove"    classname="org.apache.catalina.ant.RemoveTask"/>
+	<taskdef name="roles"     classname="org.apache.catalina.ant.RolesTask"/>
+	<taskdef name="start"     classname="org.apache.catalina.ant.StartTask"/>
+	<taskdef name="stop"      classname="org.apache.catalina.ant.StopTask"/>
+	<taskdef name="list"      classname="org.apache.catalina.ant.ListTask"/>
+	
+	<!-- クラスパスの指定 開始 -->
+	<path id="classpathes">
+		<pathelement path="${java.class.path}"/>
+		<pathelement location="${build.classes}"/>
+		<pathelement location="${lib}"/>
+		<fileset dir="${lib}">
+			<include name="**/*.jar"/>
+			<include name="**/*.zip"/>
+		</fileset>
+
+		<fileset dir="${catalina.home}/lib">
+			<include name="**/*.jar"/>
+			<include name="**/*.zip"/>
+		</fileset>
+	</path>
+	
+	<target name="all" depends="app">    </target>
+	<target name="app" depends="war,undeploy,deploy">    </target>
+
+	<!-- Executable Targets -->
+	<target name="help" description="Build.xml Help information">
+		<echo>buildコマンドに入力できる引数：</echo>    
+		<echo>====================================================</echo>    
+		<echo>  引数　　　説明</echo>
+		<echo>----------------------------------------------------</echo>    
+		<echo>  war       デプロイパッケージの作成</echo>
+		<echo>  deploy    パッケージデプロイ</echo>
+		<echo>  undeploy  配備解除</echo>
+		<echo>  start     起動</echo>
+		<echo>  stop      停止</echo>
+		<echo>  reload    再起動</echo>
+		<echo>  all       パッケージ作成とデプロイ</echo>
+		<echo>  help    　buildコマンド使い方を説明する</echo>
+		<echo>====================================================</echo>    
+		<echo>入力例: build deploy  デプロイ</echo>
+		<echo></echo>
+		<echo>説明：</echo>
+		<echo>　引数を入力しない場合、war引数を指定すると同じ、デプロイパッケージを作成する。</echo>
+		<echo>　引数を入力する場合、パラメータを要求させるようにする。</echo>    
+	</target>
+	
+	<target name="clean" description="Clean Output Files">
+		<delete includeEmptyDirs="true">
+			<fileset dir="${build}/classes" includes="*.properties"/>
+			<fileset dir="${build}/classes" includes="*.xml"/>
+		</delete>
+		<delete dir="${build}/classes/com"/>
+	</target>
+
+	<target name="compile" depends="clean" description="Compile web application">
+		<echo>コンパイル開始</echo>
+		<javac srcdir="${basedir}/src/java"  destdir="${basedir}/webapps/WEB-INF/classes"
+			includes= "**/*.java" encoding="UTF-8">
+			<compilerarg line="-encoding UTF-8 "/> 
+			<compilerarg value="-nowarn"/>
+<!--
+			<compilerarg value="-Xlint:unchecked"/>
+-->
+			<classpath refid="classpathes"/>
+
+		</javac>
+		<copy todir="${basedir}/webapps/WEB-INF/classes">
+			<fileset dir="${basedir}/src/resources">
+				<include name="**/*.properties"/>
+				<include name="**/*.dtd"/>
+				<include name="**/*.xml"/>
+				<include name="**/*.ftl"/>
+			</fileset>
+		</copy>	
+		<echo>コンパイル完了</echo>
+	</target>
+	<!-- war ファイル 生成用 Directoryのクリア -->
+	<target name="war.clean" description="war ファイル 生成用 Directoryのクリアする。">
+			<echo>コンパイル完了</echo>
+		<echo>war ファイル 生成用ディレクトリ クリア中．．．</echo>
+		<delete dir="${build.war}" />
+		<echo>war ファイル 生成用ディレクトリ クリア完了</echo>
+	</target>
+	
+	<!-- war ファイル 生成用 ディレクトリの作成 -->
+	<target name="war.prepare" depends="war.clean" description="war ファイル 生成用 ディレクトリの作成する。">
+		<echo>war ファイル 生成用ディレクトリ 作成中．．．</echo>
+		<mkdir dir="${build.war}"/>
+		<!--<mkdir dir="${build.war}/log"/>
+		<mkdir dir="${build.war}/work"/> -->
+		<echo>war ファイル 生成用ディレクトリ 作成完了</echo>
+		
+	</target>
+	
+	<!-- war作成用ファイルをコピー -->
+	<target name="war.copyFiles" depends="compile, war.prepare" description="war作成用ファイルをコピー">
+		<echo>war作成用ファイルコピー中．．．</echo>
+		
+		<copy todir="${build.war}/css">
+			<fileset dir="${basedir}/webapps/css">
+			</fileset>
+		</copy>
+		<copy todir="${build.war}/images">
+			<fileset dir="${basedir}/webapps/images">
+			</fileset>
+		</copy>
+		<copy todir="${build.war}/js">
+			<fileset dir="${basedir}/webapps/js">
+			</fileset>
+		</copy>
+		<copy todir="${build.war}/jsp">
+			<fileset dir="${basedir}/webapps/jsp">
+			</fileset>
+		</copy>
+		<copy todir="${build.war}/META-INF">
+			<fileset dir="${basedir}/webapps/META-INF">
+			</fileset>
+		</copy>
+		<copy todir="${build.war}/WEB-INF">
+			<fileset dir="${basedir}/webapps/WEB-INF">
+			</fileset>
+		</copy>
+		<copy todir="${build.war}/styles">
+			<fileset dir="${basedir}/webapps/styles">
+			</fileset>
+		</copy>
+		
+		<echo>war作成用ファイルコピー完了</echo>
+	</target>
+	
+	<target name="war" depends="compile, war.copyFiles" >
+	<echo>war作成用ファイルコピー完了</echo>
+	<echo>${build.war}/../../fsnet.war</echo>
+		<war  warfile="${build.war}/../../fsnet.war" webxml="${build.war}/WEB-INF/web.xml" basedir="${build.war}" >
+			<!--<lib dir="${build.war}/WEB-INF/lib"/>
+			<classes dir="${build.war}/WEB-INF/classes/"/>-->
+		</war>
+    </target>
+	
+	<!-- Tomacat用コマンド -->
+    <target name="list" description="List Tomcat applications">
+        <list url="${url}" username="${username}" password="${password}"/>
+    </target>
+    
+    <target name="start" description="Start Tomcat application">
+        <start url="${url}" username="${username}" password="${password}"
+            path="/${webapp.name}"/>
+    </target>
+    
+    <target name="stop" description="Stop Tomcat application">
+        <stop url="${url}" username="${username}" password="${password}"
+            path="/${webapp.name}"/>
+    </target>
+    
+    <!-- First install application depends="war" -->
+	<target name="deploy" depends="war" description="Install web application" >
+		<deploy url="${url}" username="${username}" password="${password}"
+			path="/${webapp.name}" war="file:${build.war}/../../fsnet.war"/>
+	</target>
+	
+	<target name="remove" depends="stop" description="Remove application from Tomcat">
+	    <remove url="${url}" username="${username}" password="${password}"
+	        path="/${webapp.name}"/>
+	</target>
+    
+	<target name="undeploy" depends="stop" description="Remove application from Tomcat">
+	    <undeploy url="${url}" username="${username}" password="${password}"
+	        path="/${webapp.name}"/>
+	</target>
+    
+	<!-- application must be installed -->
+	<target name="reload" description="Reload application in Tomcat">
+        <reload url="${url}" username="${username}" password="${password}"
+            path="/${webapp.name}"/>
+    </target>
+</project>
